@@ -45,7 +45,7 @@ function coordinates() {
 	numberBlocks.forEach((elem) => {
 		elem.parentElement.addEventListener('click', (event) => {
 			// внутри target'а узнаем координаты
-			console.log(event.target.offsetLeft, event.target.offsetTop);
+			// console.log(event.target.offsetLeft, event.target.offsetTop);
 
 			// координаты не 0 блока
 			let X = event.target.offsetLeft;
@@ -63,19 +63,15 @@ function coordinates() {
 					// координаты 0 блока
 					X0 = element.parentElement.offsetLeft;
 					Y0 = element.parentElement.offsetTop;
-					console.log(element.parentElement.offsetLeft, element.parentElement.offsetTop, 'координаты 0');
 				}
 			});
 
 			//вычитание координат для определения кто ближе к 0
 			let diffX = Math.abs(X - X0);
 			let diffY = Math.abs(Y - Y0);
-			console.log('-'.repeat(50));
-			console.log(diffX, diffY);
 
 			// 0 означают, что блок находится на одной строке или одной столбце с 0 блоком (иначе работает диагональ
 			//по координатам, те блоки, у которыз больше 110\137 это не рядом с 0.
-
 			if ((diffX <= 110 && diffY == 0) || (diffY <= 137 && diffX == 0)) {
 				[zeroElement.innerHTML, elem.innerHTML] = [elem.innerHTML, zeroElement.innerHTML]; //меняет местами значения
 				zeroHide();
