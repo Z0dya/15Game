@@ -5,11 +5,13 @@ html {
 
 body {
     height: 100%;
+    background: #E55D87;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #86fde8, #acb6e5);
+    background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #86fde8, #acb6e5);
+    background: linear-gradient(to right, #5FC3E4, #E55D87);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     animation: gradient 10s ease-in infinite;
     background-size: 200% 200%;
     overflow: hidden;
@@ -28,7 +30,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 
@@ -66,6 +67,19 @@ h1 {
 
 button {
     font-size: 3rem;
+}
+
+.winText {
+    background: rgb(131, 58, 180);
+    background: radial-gradient(circle, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0B2349;
+    margin: 20px auto;
+    animation: gradient 4s ease infinite;
+    background-size: 200% 200%;
+    box-sizing: border-box;
 }
 
 .buttonRand {

@@ -1,5 +1,17 @@
 'use strict';
 
+let num1 = document.querySelector('#num1');
+let num2 = document.querySelector('#num2');
+let num3 = document.querySelector('#num3');
+let num4 = document.querySelector('#num4');
+let num5 = document.querySelector('#num5');
+let num6 = document.querySelector('#num6');
+let num7 = document.querySelector('#num7');
+let num8 = document.querySelector('#num8');
+let num0 = document.querySelector('#num0');
+
+let winner = document.querySelector('.winText');
+
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 let exists = [];
 let numberBlocks = document.querySelectorAll('.randNumbers'); //все span'ы
@@ -75,6 +87,22 @@ function coordinates() {
 			if ((diffX <= 110 && diffY == 0) || (diffY <= 137 && diffX == 0)) {
 				[zeroElement.innerHTML, elem.innerHTML] = [elem.innerHTML, zeroElement.innerHTML]; //меняет местами значения
 				zeroHide();
+			}
+
+			if (
+				num1.innerHTML == 1 &&
+				num2.innerHTML == 2 &&
+				num3.innerHTML == 3 &&
+				num4.innerHTML == 4 &&
+				num5.innerHTML == 5 &&
+				num6.innerHTML == 6 &&
+				num7.innerHTML == 7 &&
+				num8.innerHTML == 8 &&
+				num0.innerHTML == 0
+			) {
+				winner.innerHTML = 'Вы выиграли!';
+			} else {
+				winner.innerHTML = '';
 			}
 		});
 	});
