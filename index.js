@@ -1,5 +1,6 @@
 'use strict';
 
+// все спаны по очереди с 1 по 9[0]
 let num1 = document.querySelector('#num1');
 let num2 = document.querySelector('#num2');
 let num3 = document.querySelector('#num3');
@@ -10,6 +11,7 @@ let num7 = document.querySelector('#num7');
 let num8 = document.querySelector('#num8');
 let num0 = document.querySelector('#num0');
 
+// пустой h1 для вывода сообщения о выигрыше
 let winner = document.querySelector('.winText');
 
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -53,6 +55,7 @@ function zeroHide() {
 	});
 }
 
+// функция нахождения координат, и передвижения
 function coordinates() {
 	numberBlocks.forEach((elem) => {
 		elem.parentElement.addEventListener('click', (event) => {
@@ -89,6 +92,7 @@ function coordinates() {
 				zeroHide();
 			}
 
+			//условие, если пятнашки собраны, то вывести сообщение о победе
 			if (
 				num1.innerHTML == 1 &&
 				num2.innerHTML == 2 &&
